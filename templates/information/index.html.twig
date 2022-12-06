@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Данные о доставки груза{% endblock %}
+
+{% block body %}
+    <h3>Данные о доставки груза</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Direction</th>
+                <th>Cargo</th>
+                <th>Time</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for information in information %}
+            <tr>
+                <td>{{ information.id }}</td>
+                <td>{{ information.direction }}</td>
+                <td>{{ information.cargo }}</td>
+                <td>{{ information.time }}</td>
+                <td>
+                    <a href="{{ path('app_information_show', {'id': information.id}) }}">show</a>
+                    <a href="{{ path('app_information_edit', {'id': information.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_information_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,22 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+home:
+    path: home
+    controller: App\Controller\HomeController
+    
+aboutus:
+    path: aboutus
+    controller: App\Controller\AboutusController
+
+data:
+    path: data
+    controller: App\Controller\DataController
+information:
+    path: information
+    controller: App\Controller\InformationController
+driver:
+    path: driver
+    controller: App\Controller\DriverController
